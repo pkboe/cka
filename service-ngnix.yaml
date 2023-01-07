@@ -3,12 +3,6 @@ kind: Service
 metadata:
   name: service-poc
 spec:
+  selector: { name: mainpage, type: frontend }
   type: NodePort
-  kind: Service
-  apiVersion: v1
-  metadata:
-    name: Service Name
-  spec:
-    selector: { name: mainpage, type: frontend }
-    type: LoadBalancer | ClusterIP | NodePort
-    ports: [{ port: 80, targetPort: 80, nodePort: 30008 }]
+  ports: [{ port: 80, targetPort: 80, nodePort: 30008 }]
